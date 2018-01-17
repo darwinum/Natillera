@@ -10,6 +10,8 @@
     <Compile Remove="Migrations\20180117150917_MyPrimeraMigracion.cs" />
     <Compile Remove="Migrations\20180117152456_MyPrimeraMigracion.cs" />
     <Compile Remove="Migrations\20180117153014_MyPrimeraMigracion.cs" />
+    <Compile Remove="Migrations\20180117173603_MyPrimeraMigracion.cs" />
+    <Compile Remove="Migrations\20180117173827_MyPrimeraMigracion.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,10 +19,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

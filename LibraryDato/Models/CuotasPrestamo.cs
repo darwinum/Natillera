@@ -14,7 +14,7 @@ namespace LibraryDato.Models
         /// <summary>
         /// la cuota a que prestamo pertenece
         /// </summary>
-        public virtual Prestamo Prestamo { get; set; }
+        public  Prestamo Prestamo { get; set; }
         
 
         /// <summary>
