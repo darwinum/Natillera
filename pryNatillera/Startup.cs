@@ -38,12 +38,17 @@ namespace pryNatillera
 
             //DUM: Realizo un cambio de contexto para que trabaje con la libreria nueva de contexto
 
+            //se realiza la injecion para que la aplicacion pueda trabajar con el nuevo contexto
             services.AddDbContext<LibraryDatoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+           //se realiza la injeccion con el contexto para la conexion de seguriada
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
-               .AddEntityFrameworkStores<LibraryDatoContext>()
-               .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             //DUM: fin cambio de contexto.
 

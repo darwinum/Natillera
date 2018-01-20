@@ -1,9 +1,9 @@
-﻿using LibraryDato.Models;
+﻿using ModelosEntidades.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LibraryDato
+namespace ModelosEntidades
 {
     public interface INatillera
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace LibraryDato.Models
+namespace ModelosEntidades.Models
 {
     /// <summary>
     /// entidad o clase que se encarga de almacenar los diferentes tipos de documento.

@@ -1,5 +1,6 @@
-﻿using LibraryDato.Models;
+﻿
 using Microsoft.EntityFrameworkCore;
+using ModelosEntidades.Models;
 using System;
 
 namespace LibraryDato

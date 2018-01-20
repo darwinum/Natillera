@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace LibraryDato.Models
+namespace ModelosEntidades.Models
 {
     /// <summary>
     /// entidad que almacena la información relacionada de que socios pertenecen a determinada natillera

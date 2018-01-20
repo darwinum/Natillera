@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryDato;
 using Microsoft.AspNetCore.Mvc;
+using ModelosEntidades;
 
 namespace pryNatillera.Controllers
 {

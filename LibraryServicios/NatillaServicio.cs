@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using LibraryDato;
-using LibraryDato.Models;
+using ModelosEntidades;
+using ModelosEntidades.Models;
 
 namespace LibraryServicios
 {

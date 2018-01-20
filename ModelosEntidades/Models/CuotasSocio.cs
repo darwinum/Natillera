@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace LibraryDato.Models
+namespace ModelosEntidades.Models
 {
     /// <summary>
     /// entidad que almacena el valor de la cuota que el socio se compromete a dar por ser parte de la natillera.

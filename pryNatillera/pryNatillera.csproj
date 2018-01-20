@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibraryServicios\LibraryServicios.csproj" />
+    <ProjectReference Include="..\ModelosEntidades\ModelosEntidades.csproj" />
   </ItemGroup>
 </Project>
