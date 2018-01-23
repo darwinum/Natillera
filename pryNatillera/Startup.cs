@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using pryNatillera.Data;
 using pryNatillera.Services;
 using LibraryDato;
+using LibraryServicios;
+using ModelosEntidades;
 
 namespace pryNatillera
 {
@@ -50,6 +52,9 @@ namespace pryNatillera
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            //se agrega el contexto para el servicio de natilla, esto se necesita en el constructor
+            services.AddScoped<INatillera, NatillaServicio>().AddDbContext<LibraryDatoContext>();
+            
             //DUM: fin cambio de contexto.
 
             services.AddMvc()

@@ -16,11 +16,13 @@ namespace ModelosEntidades.Models
         [StringLength(250)]
         public string DescripcionNatillera { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime FechaCreacion { get; set; }
 
         /// <summary>
         /// indica cuando se debe iniciar con el pago de la cuota
         /// </summary>
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime FechaInicioPagoCuota { get; set; }
 
         /// <summary>
