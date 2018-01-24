@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ModelosEntidades;
-using nati=ModelosEntidades.Models;
+using nati = ModelosEntidades.Models;
 using LibraryServicios;
+using Microsoft.EntityFrameworkCore;
 
 namespace pryNatillera.Pages.Natillera
 {
@@ -32,9 +33,31 @@ namespace pryNatillera.Pages.Natillera
 
         public IActionResult OnGet()
         {
-            Natilleras =  _ina.ObtenerTodas().ToList();
-
+            Natilleras = _ina.ObtenerTodas().ToList();
             return Page();
+        }
+
+        public IActionResult OnPostDelete(int id)
+        {
+            _ina.EliminarNatillera(id);           
+            return RedirectToPage("Index");           
+        }
+
+        public IActionResult OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            try
+            {
+                _ina.Actualizar(Natillera);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception($"Natillera {Natillera.NatilleraId} not found!");
+            }
+            return RedirectToPage("/Index");
         }
 
     }

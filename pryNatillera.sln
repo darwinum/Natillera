@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryDato", "LibraryDato\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryServicios", "LibraryServicios\LibraryServicios.csproj", "{441E2BD6-109C-48FE-A26C-C8016CAA350C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosEntidades", "ModelosEntidades\ModelosEntidades.csproj", "{5DE6583F-6859-4EEC-AC0A-0A249EC97B37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelosEntidades", "ModelosEntidades\ModelosEntidades.csproj", "{5DE6583F-6859-4EEC-AC0A-0A249EC97B37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

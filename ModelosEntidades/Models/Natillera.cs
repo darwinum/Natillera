@@ -14,15 +14,20 @@ namespace ModelosEntidades.Models
         /// descripcion o nombre de la natillera.
         /// </summary>
         [StringLength(250)]
+        //[Required(ErrorMessage ="El campo descripción es requerido")]
+        //[Display(ResourceType = typeof(MensajesEntidades), Name = "Descripción")]      
+        [Required(ErrorMessageResourceType = typeof(MensajesEntidades), ErrorMessageResourceName = "NatilleraDescripcion")]
         public string DescripcionNatillera { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]       
         public DateTime FechaCreacion { get; set; }
 
         /// <summary>
         /// indica cuando se debe iniciar con el pago de la cuota
         /// </summary>
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaInicioPagoCuota { get; set; }
 
         /// <summary>
@@ -44,6 +49,8 @@ namespace ModelosEntidades.Models
         /// <summary>
         /// dias que tiene el socio antes de aplicar el calculo del valor de la mora.
         /// </summary>
+       
+        [RegularExpression("([1-9][0-9]*)", ErrorMessageResourceType = typeof(MensajesEntidades), ErrorMessageResourceName = "NatilleraDiasGraciaMoraNumero")]
         public Decimal DiasGraciaMora { get; set; }
 
         /// <summary>

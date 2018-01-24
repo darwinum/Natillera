@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LibraryDato;
+using Microsoft.EntityFrameworkCore;
 using ModelosEntidades;
 using ModelosEntidades.Models;
 
@@ -17,18 +18,30 @@ namespace LibraryServicios
 
         public void Actualizar(Natillera natillera)
         {
-            throw new NotImplementedException();
+            _context.Attach(natillera).State = EntityState.Modified;           
+            _context.SaveChanges();
         }
 
         public void Insertar(Natillera natillera)
         {
+           // _context.Attach(natillera).State = EntityState.Modified;
             _context.Add(natillera);
             _context.SaveChanges();
         }
 
         public Natillera ObtenerById(int natilleraID)
         {
-            throw new NotImplementedException();
+            return _context.Natilleras.Find(natilleraID);            
+        }
+
+        public void EliminarNatillera(int natilleraID)
+        {
+            Natillera natillera = ObtenerById(natilleraID);
+            if (natillera != null)
+            {
+                _context.Natilleras.Remove(natillera);
+                _context.SaveChangesAsync();
+            }          
         }
 
         public IEnumerable<Natillera> ObtenerTodas()

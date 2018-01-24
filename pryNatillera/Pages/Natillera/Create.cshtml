@@ -1,0 +1,39 @@
+﻿@page
+@model pryNatillera.Pages.Natillera.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear Natillera</h2>
+
+
+<div class="container">
+
+    <form method="post" class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" asp-for="Natillera.DescripcionNatillera">Descripción</label>
+            <div class="col-md-3">
+                <input asp-for="Natillera.DescripcionNatillera" class="form-control" />
+                <span asp-validation-for="Natillera.DescripcionNatillera" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label" asp-for="Natillera.DiasGraciaMora">Dias de Gracia Mora</label>
+            <div class="col-md-1">
+                <input asp-for="Natillera.DiasGraciaMora" class="form-control" />
+                <span asp-validation-for="Natillera.DiasGraciaMora" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label" asp-for="Natillera.FechaInicioPagoCuota">Dias de Gracia Mora</label>
+            <div class="col-md-2">
+                <input type="date" asp-for="Natillera.FechaInicioPagoCuota" class="form-control" />
+                <span asp-validation-for="Natillera.FechaInicioPagoCuota" class="text-anger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Aceptar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

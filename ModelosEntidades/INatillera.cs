@@ -11,5 +11,6 @@ namespace ModelosEntidades
         Natillera ObtenerById(int natilleraID);
         void Insertar(Natillera natillera);
         void Actualizar(Natillera natillera);
+        void EliminarNatillera(int natilleraID);
     }
 }
