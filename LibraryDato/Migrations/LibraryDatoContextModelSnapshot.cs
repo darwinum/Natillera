@@ -20,7 +20,7 @@ namespace LibraryDato.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("LibraryDato.Models.ActividadesRecaudo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.ActividadesRecaudo", b =>
                 {
                     b.Property<int>("ActividadesRecaudoId")
                         .ValueGeneratedOnAdd();
@@ -50,7 +50,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("ActividadesRecaudos");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.CuotasPrestamo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.CuotasPrestamo", b =>
                 {
                     b.Property<int>("CuotasPrestamoId")
                         .ValueGeneratedOnAdd();
@@ -78,7 +78,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("CuotasPrestamos");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.CuotasSocio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.CuotasSocio", b =>
                 {
                     b.Property<int>("CuotasSocioId")
                         .ValueGeneratedOnAdd();
@@ -106,15 +106,16 @@ namespace LibraryDato.Migrations
                     b.ToTable("CuotasSocios");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.Natillera", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.Natillera", b =>
                 {
                     b.Property<int>("NatilleraId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("DescripcionNatillera")
+                        .IsRequired()
                         .HasMaxLength(250);
 
-                    b.Property<decimal>("DiasGraciaMora");
+                    b.Property<int>("DiasGraciaMora");
 
                     b.Property<DateTime>("FechaCreacion");
 
@@ -136,7 +137,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("Natilleras");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.NatilleraSocio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.NatilleraSocio", b =>
                 {
                     b.Property<int>("NatilleraSocioID")
                         .ValueGeneratedOnAdd();
@@ -154,7 +155,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("NatilleraSocio");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.Prestamo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.Prestamo", b =>
                 {
                     b.Property<int>("PrestamoId")
                         .ValueGeneratedOnAdd();
@@ -181,7 +182,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("Prestamos");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.Socio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.Socio", b =>
                 {
                     b.Property<int>("SocioId")
                         .ValueGeneratedOnAdd();
@@ -216,7 +217,7 @@ namespace LibraryDato.Migrations
                     b.ToTable("Socios");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.TiposDocumento", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.TiposDocumento", b =>
                 {
                     b.Property<int>("TipoDocumentoId")
                         .ValueGeneratedOnAdd();
@@ -230,56 +231,56 @@ namespace LibraryDato.Migrations
                     b.ToTable("TiposDocumentos");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.ActividadesRecaudo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.ActividadesRecaudo", b =>
                 {
-                    b.HasOne("LibraryDato.Models.Natillera", "Natillera")
+                    b.HasOne("ModelosEntidades.Models.Natillera", "Natillera")
                         .WithMany()
                         .HasForeignKey("NatilleraId");
 
-                    b.HasOne("LibraryDato.Models.Socio", "Socio")
+                    b.HasOne("ModelosEntidades.Models.Socio", "Socio")
                         .WithMany()
                         .HasForeignKey("SocioId");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.CuotasPrestamo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.CuotasPrestamo", b =>
                 {
-                    b.HasOne("LibraryDato.Models.Prestamo", "Prestamo")
+                    b.HasOne("ModelosEntidades.Models.Prestamo", "Prestamo")
                         .WithMany("CuotasPrestamo")
                         .HasForeignKey("PrestamoId");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.CuotasSocio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.CuotasSocio", b =>
                 {
-                    b.HasOne("LibraryDato.Models.Natillera", "Natillera")
+                    b.HasOne("ModelosEntidades.Models.Natillera", "Natillera")
                         .WithMany("CuotasSocio")
                         .HasForeignKey("NatilleraId");
 
-                    b.HasOne("LibraryDato.Models.Socio", "Socio")
+                    b.HasOne("ModelosEntidades.Models.Socio", "Socio")
                         .WithMany()
                         .HasForeignKey("SocioId");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.NatilleraSocio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.NatilleraSocio", b =>
                 {
-                    b.HasOne("LibraryDato.Models.Natillera", "Natillera")
+                    b.HasOne("ModelosEntidades.Models.Natillera", "Natillera")
                         .WithMany("NatilleraSocio")
                         .HasForeignKey("NatilleraId");
 
-                    b.HasOne("LibraryDato.Models.Socio", "socio")
+                    b.HasOne("ModelosEntidades.Models.Socio", "socio")
                         .WithMany("NatilleraSocio")
                         .HasForeignKey("SocioId");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.Prestamo", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.Prestamo", b =>
                 {
-                    b.HasOne("LibraryDato.Models.Socio", "Socio")
+                    b.HasOne("ModelosEntidades.Models.Socio", "Socio")
                         .WithMany()
                         .HasForeignKey("SocioId");
                 });
 
-            modelBuilder.Entity("LibraryDato.Models.Socio", b =>
+            modelBuilder.Entity("ModelosEntidades.Models.Socio", b =>
                 {
-                    b.HasOne("LibraryDato.Models.TiposDocumento", "TiposDocumento")
+                    b.HasOne("ModelosEntidades.Models.TiposDocumento", "TiposDocumento")
                         .WithMany()
                         .HasForeignKey("TiposDocumentoTipoDocumentoId");
                 });

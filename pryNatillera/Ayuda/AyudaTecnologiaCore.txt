@@ -1,0 +1,3 @@
+como implementar un DropdownList en asp net core 2, minuto 7:30
+<select asp-for="id" asp-item="@(new selectList(@datosRelleno,"id","name"))"></select>
+https://www.youtube.com/watch?v=pFTkh9z-e3U

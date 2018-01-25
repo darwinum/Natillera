@@ -29,7 +29,7 @@ namespace LibraryServicios
             _context.SaveChanges();
         }
 
-        public Natillera ObtenerById(int natilleraID)
+        public Natillera ObtenerById(int? natilleraID)
         {
             return _context.Natilleras.Find(natilleraID);            
         }

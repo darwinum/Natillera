@@ -51,7 +51,8 @@ namespace ModelosEntidades.Models
         /// </summary>
        
         [RegularExpression("([1-9][0-9]*)", ErrorMessageResourceType = typeof(MensajesEntidades), ErrorMessageResourceName = "NatilleraDiasGraciaMoraNumero")]
-        public Decimal DiasGraciaMora { get; set; }
+        [DataType(DataType.Currency)]
+        public int DiasGraciaMora { get; set; }
 
         /// <summary>
         /// si es falso el valor mora sera por cada dia, si es verdadero sin importar los dias que se pase del pago

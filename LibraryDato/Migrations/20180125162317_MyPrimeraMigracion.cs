@@ -15,8 +15,8 @@ namespace LibraryDato.Migrations
                 {
                     NatilleraId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DescripcionNatillera = table.Column<string>(maxLength: 250, nullable: true),
-                    DiasGraciaMora = table.Column<decimal>(nullable: false),
+                    DescripcionNatillera = table.Column<string>(maxLength: 250, nullable: false),
+                    DiasGraciaMora = table.Column<int>(nullable: false),
                     FechaCreacion = table.Column<DateTime>(nullable: false),
                     FechaInicioPagoCuota = table.Column<DateTime>(nullable: false),
                     NumeroCuotas = table.Column<int>(nullable: false),
