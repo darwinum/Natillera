@@ -7,13 +7,13 @@
 }
 
 <h2>Información Natillera</h2>
-
+<br />
 <form method="post">
     <table class="table">
         <thead>
             <tr>
                 <th>Descripción</th>
-                <th>Dias de Gracia Mora</th>                
+                <th>Dias de Gracia Mora</th>
                 <th>Fecha Inicio Pago</th>
                 <th>Número Cuotas</th>
                 <th>Período Pago</th>
@@ -24,27 +24,32 @@
         </thead>
         <tbody>
             @foreach (var eNatille in Model.Natilleras)
-                {
-            <tr>
-                <td>@eNatille.DescripcionNatillera</td>
-                <td>@eNatille.DiasGraciaMora</td>               
-                <td>@eNatille.FechaInicioPagoCuota.ToString("yyyy/MM/dd")</td>
-                <td>@eNatille.CuotasSocio</td>
-                <td>@eNatille.TipoPago</td>
-                <td>@eNatille.ValorCuota</td>
-                <td>@eNatille.ValorMora</td>
-                <td>@eNatille.ValorMoraDiaFijo</td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@eNatille.NatilleraId">edit</a>
-                    <button type="submit" asp-page-handler="delete"
-                            asp-route-id="@eNatille.NatilleraId">
-                        delete
-                    </button>
-                </td>
-            </tr>
-                }
+            {
+                <tr>
+                    <td>@eNatille.DescripcionNatillera</td>
+                    <td>@eNatille.DiasGraciaMora</td>
+                    <td>@eNatille.FechaInicioPagoCuota.ToString("dd/MM/yyyy")</td>
+                    <td>@eNatille.NumeroCuotas</td>
+                    <td>@eNatille.TipoPago</td>
+                    <td>@eNatille.ValorCuota</td>
+                    <td>@eNatille.ValorMora</td>
+                    <td>@( eNatille.ValorMoraDiaFijo ? "SI" : "NO" )</td>
+                    <td>
+                        <a asp-page="./Edit"  asp-route-id="@eNatille.NatilleraId">Modificar</a>
+                        <button id="btnEliminar" type="submit" class="btn-danger" asp-page-handler="delete" asp-route-id="@eNatille.NatilleraId">Borrar</button>
+                    </td>
+                </tr>
+            }
+       
+        
         </tbody>
     </table>
-
-    <a asp-page="Create">Create</a>
+    <a class=" btn btn-info" asp-page="Create">Crear Nueva Natillera</a>   
 </form>
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("input[id='btnEliminar']").click(function () {
+            return confirm('Esta seguro de eliminar la información de la natillera seleccionada.?');
+        });
+    });
+</script>*@

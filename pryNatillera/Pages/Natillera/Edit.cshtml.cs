@@ -60,7 +60,7 @@ namespace pryNatillera.Pages.Natillera
                 //}
             }
 
-            return RedirectToPage("Index");
+            return RedirectToPage("~/Natillera/Index");
         }
 
     }

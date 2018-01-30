@@ -123,8 +123,7 @@ namespace LibraryDato.Migrations
 
                     b.Property<int>("NumeroCuotas");
 
-                    b.Property<string>("TipoPago")
-                        .HasMaxLength(250);
+                    b.Property<int>("TipoPago");
 
                     b.Property<decimal>("ValorCuota");
 

@@ -23,15 +23,45 @@
                 <input asp-for="Natillera.DiasGraciaMora" class="form-control" />
                 <span asp-validation-for="Natillera.DiasGraciaMora" class="text-danger"></span>
             </div>
-            <label class="col-md-2 control-label" asp-for="Natillera.FechaInicioPagoCuota">Dias de Gracia Mora</label>
+            <label class="col-md-2 control-label" asp-for="Natillera.FechaInicioPagoCuota">Fecha Inicio Cuota</label>
             <div class="col-md-2">
+                <date-util format="dd/MM/yyyy"></date-util>
                 <input type="date" asp-for="Natillera.FechaInicioPagoCuota" class="form-control" />
                 <span asp-validation-for="Natillera.FechaInicioPagoCuota" class="text-anger"></span>
             </div>
         </div>
         <div class="form-group">
+            <label class="col-md-2 control-label" asp-for="Natillera.NumeroCuotas">Número de Cuotas</label>
+            <div class="col-md-3">
+                <input asp-for="Natillera.NumeroCuotas" class="form-control" />
+                <span asp-validation-for="Natillera.NumeroCuotas" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label" asp-for="Natillera.TipoPago">Tipo Pago</label>
+            <div class="col-md-1">
+                <input asp-for="Natillera.TipoPago" class="form-control" />
+                <span asp-validation-for="Natillera.TipoPago" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label" asp-for="Natillera.ValorCuota">Valor Cuota</label>
+            <div class="col-md-2">
+                <input type="number" asp-for="Natillera.ValorCuota" class="form-control" />
+                <span asp-validation-for="Natillera.ValorCuota" class="text-anger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" asp-for="Natillera.ValorMora">Valor Mora</label>
+            <div class="col-md-3">
+                <input asp-for="Natillera.ValorMora" class="form-control" />
+                <span asp-validation-for="Natillera.ValorMora" class="text-danger"></span>
+            </div>
+            <label class="col-md-2 control-label" asp-for="Natillera.ValorMoraDiaFijo">Valor Mora Día Fijo</label>
+            <div class="col-md-1">
+                <input type="checkbox" asp-for="Natillera.ValorMoraDiaFijo" class="form-control" />
+                <span asp-validation-for="Natillera.ValorMoraDiaFijo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-default">Aceptar</button>
+                <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
         </div>
     </form>

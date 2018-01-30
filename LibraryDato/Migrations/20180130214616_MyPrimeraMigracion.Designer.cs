@@ -11,7 +11,7 @@ using System;
 namespace LibraryDato.Migrations
 {
     [DbContext(typeof(LibraryDatoContext))]
-    [Migration("20180125162317_MyPrimeraMigracion")]
+    [Migration("20180130214616_MyPrimeraMigracion")]
     partial class MyPrimeraMigracion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -124,8 +124,7 @@ namespace LibraryDato.Migrations
 
                     b.Property<int>("NumeroCuotas");
 
-                    b.Property<string>("TipoPago")
-                        .HasMaxLength(250);
+                    b.Property<int>("TipoPago");
 
                     b.Property<decimal>("ValorCuota");
 

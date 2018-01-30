@@ -14,11 +14,15 @@ using pryNatillera.Services;
 using LibraryDato;
 using LibraryServicios;
 using ModelosEntidades;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace pryNatillera
 {
     public class Startup
     {
+        private const string enUSCulture = "es-MX";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -44,7 +48,7 @@ namespace pryNatillera
             services.AddDbContext<LibraryDatoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-           //se realiza la injeccion con el contexto para la conexion de seguriada
+            //se realiza la injeccion con el contexto para la conexion de seguriada
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -54,7 +58,7 @@ namespace pryNatillera
 
             //se agrega el contexto para el servicio de natilla, esto se necesita en el constructor
             services.AddScoped<INatillera, NatillaServicio>().AddDbContext<LibraryDatoContext>();
-            
+
             //DUM: fin cambio de contexto.
 
             services.AddMvc()
@@ -72,6 +76,23 @@ namespace pryNatillera
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            //DUM: inicio establacer cultura
+            var supportedCultures = new[]
+            {
+                new CultureInfo(enUSCulture)              
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUSCulture),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
+            //DUM: Final establecer cultura.
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

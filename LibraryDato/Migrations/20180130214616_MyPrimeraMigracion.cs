@@ -20,7 +20,7 @@ namespace LibraryDato.Migrations
                     FechaCreacion = table.Column<DateTime>(nullable: false),
                     FechaInicioPagoCuota = table.Column<DateTime>(nullable: false),
                     NumeroCuotas = table.Column<int>(nullable: false),
-                    TipoPago = table.Column<string>(maxLength: 250, nullable: true),
+                    TipoPago = table.Column<int>(nullable: false),
                     ValorCuota = table.Column<decimal>(nullable: false),
                     ValorMora = table.Column<decimal>(nullable: false),
                     ValorMoraDiaFijo = table.Column<bool>(nullable: false)
