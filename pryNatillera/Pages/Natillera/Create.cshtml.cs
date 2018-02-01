@@ -41,7 +41,7 @@ namespace pryNatillera.Pages.Natillera
             }
             _ina.Insertar(Natillera);            
             Message = $"Customer {Natillera.DescripcionNatillera} added";
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Natillera/Index");
         }
     }
 }

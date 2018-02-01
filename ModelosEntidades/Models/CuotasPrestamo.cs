@@ -5,6 +5,9 @@ using System.Text;
 
 namespace ModelosEntidades.Models
 {
+    /// <summary>
+    /// cambiar el nombre de esta clase por AbonosPrestamo
+    /// </summary>
     public class CuotasPrestamo
     {
         [Key]

@@ -27,7 +27,7 @@ namespace ModelosEntidades.Models
         /// indica cuando se debe iniciar con el pago de la cuota
         /// </summary>
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //[RegularExpression(@"^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$", ErrorMessageResourceType = typeof(MensajesEntidades), ErrorMessageResourceName = "NatilleraDiasGraciaMoraNumero")]
         public DateTime FechaInicioPagoCuota { get; set; }
        

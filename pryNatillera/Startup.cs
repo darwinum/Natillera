@@ -21,7 +21,7 @@ namespace pryNatillera
 {
     public class Startup
     {
-        private const string enUSCulture = "es-MX";
+        private const string enUSCulture = "es-CO";
 
         public Startup(IConfiguration configuration)
         {
@@ -61,6 +61,12 @@ namespace pryNatillera
 
             //DUM: fin cambio de contexto.
 
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture(enUSCulture);
+                options.SupportedCultures = new List<CultureInfo> { new CultureInfo(enUSCulture), new CultureInfo(enUSCulture) };
+            });
+
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
                 {
@@ -78,18 +84,33 @@ namespace pryNatillera
         {
 
             //DUM: inicio establacer cultura
-            var supportedCultures = new[]
-            {
-                new CultureInfo(enUSCulture)              
-            };
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture(enUSCulture),
-                // Formatting numbers, dates, etc.
-                SupportedCultures = supportedCultures,
-                // UI strings that we have localized.
-                SupportedUICultures = supportedCultures
-            });
+            //var supportedCultures = new[]
+            //{
+            //    new CultureInfo(enUSCulture)              
+            //};
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture(enUSCulture),
+            //    // Formatting numbers, dates, etc.
+            //    SupportedCultures = supportedCultures,
+            //    // UI strings that we have localized.
+            //    SupportedUICultures = supportedCultures
+            //});
+
+            //var supportedCultures = new[] { new CultureInfo(enUSCulture) };
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture(enUSCulture),
+            //    SupportedCultures = supportedCultures,
+            //    SupportedUICultures = supportedCultures
+            //});
+            //CultureInfo.DefaultThreadCurrentCulture = new CultureInfo(enUSCulture);
+            //CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo(enUSCulture);
+            //CultureInfo.CurrentCulture = new CultureInfo(enUSCulture);
+            //CultureInfo.CurrentUICulture = new CultureInfo(enUSCulture);
+
+           
+
             //DUM: Final establecer cultura.
 
 

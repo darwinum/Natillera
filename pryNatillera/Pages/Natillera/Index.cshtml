@@ -35,8 +35,8 @@
                     <td>@eNatille.ValorMora</td>
                     <td>@( eNatille.ValorMoraDiaFijo ? "SI" : "NO" )</td>
                     <td>
-                        <a asp-page="./Edit"  asp-route-id="@eNatille.NatilleraId">Modificar</a>
-                        <button id="btnEliminar" type="submit" class="btn-danger" asp-page-handler="delete" asp-route-id="@eNatille.NatilleraId">Borrar</button>
+                        <a asp-page="./Edit" class="btn-success btn-sm"   asp-route-id="@eNatille.NatilleraId">Modificar</a>
+                        <button id="btnEliminar" type="submit" class="btn-danger btn-sm" asp-page-handler="delete" asp-route-id="@eNatille.NatilleraId">Borrar</button>
                     </td>
                 </tr>
             }
