@@ -20,7 +20,7 @@ namespace ModelosEntidades.Models
         public string DescripcionNatillera { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]       
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaCreacion { get; set; }
 
         /// <summary>
@@ -29,6 +29,7 @@ namespace ModelosEntidades.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //[RegularExpression(@"^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$", ErrorMessageResourceType = typeof(MensajesEntidades), ErrorMessageResourceName = "NatilleraDiasGraciaMoraNumero")]
+    
         public DateTime FechaInicioPagoCuota { get; set; }
        
         /// <summary>
@@ -82,5 +83,27 @@ namespace ModelosEntidades.Models
         public ICollection<NatilleraSocio> NatilleraSocio { get; set; }
 
 
+    }
+
+    internal class NatilleraValidacionNegocio : ValidationAttribute
+    {
+        private DateTime _year;
+
+        public NatilleraValidacionNegocio(DateTime Year)
+        {
+            _year = Year;
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            //Movie movie = (Movie)validationContext.ObjectInstance;
+
+            if (_year < DateTime.Now)
+            {
+                return new ValidationResult("Validacion creada por el usuario");
+            }
+
+            return ValidationResult.Success;
+        }
     }
 }

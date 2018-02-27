@@ -82,6 +82,8 @@ namespace pryNatillera.Pages.Account
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
+
+                //ModelState.AddModelError(string.Empty, "este es error de darwin");
             }
 
             // If we got this far, something failed, redisplay form

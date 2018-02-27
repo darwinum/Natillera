@@ -1,3 +1,6 @@
 como implementar un DropdownList en asp net core 2, minuto 7:30
 <select asp-for="id" asp-item="@(new selectList(@datosRelleno,"id","name"))"></select>
-https://www.youtube.com/watch?v=pFTkh9z-e3U
+https://www.youtube.com/watch?v=pFTkh9z-
+
+pagina agregar jquery en pagina individual de la vista 
+http://www.c-sharpcorner.com/article/getting-started-with-asp-net-core-and-jquery-crud-using-web-api/

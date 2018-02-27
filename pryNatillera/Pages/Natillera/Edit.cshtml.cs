@@ -46,6 +46,8 @@ namespace pryNatillera.Pages.Natillera
             }
             try
             {
+                Natillera.ValorMora = Convert.ToDecimal(Natillera.ValorMora.ToString().Replace(",", "").Trim().Replace(".", "").Trim());
+                Natillera.ValorCuota = Convert.ToDecimal(Natillera.ValorCuota.ToString().Replace(",", "").Trim().Replace(".", "").Trim());
                 _ina.Actualizar(Natillera);
             }
             catch (DbUpdateConcurrencyException)

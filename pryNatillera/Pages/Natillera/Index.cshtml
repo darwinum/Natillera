@@ -36,7 +36,7 @@
                     <td>@( eNatille.ValorMoraDiaFijo ? "SI" : "NO" )</td>
                     <td>
                         <a asp-page="./Edit" class="btn-success btn-sm"   asp-route-id="@eNatille.NatilleraId">Modificar</a>
-                        <button id="btnEliminar" type="submit" class="btn-danger btn-sm" asp-page-handler="delete" asp-route-id="@eNatille.NatilleraId">Borrar</button>
+                        <button id="btnEliminar" type="submit" onclick="return confirm('¿Está seguro de borrar el registro seleccionado?')" class="btn-danger btn-sm" asp-page-handler="delete" asp-route-id="@eNatille.NatilleraId">Borrar</button>
                     </td>
                 </tr>
             }

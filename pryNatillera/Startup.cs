@@ -124,7 +124,7 @@ namespace pryNatillera
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.UseRequestLocalization();
             app.UseStaticFiles();
 
             app.UseAuthentication();
@@ -134,7 +134,7 @@ namespace pryNatillera
                 routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
-            });
+            });           
         }
     }
 }
